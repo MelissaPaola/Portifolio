@@ -1,134 +1,257 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> <!--Essa tag é sobre a linguagem da página-->
+<html lang="pt-BR">
 
-<head> <!--cabeçalho-->
-    <meta charset="UTF-8"> <!--Essa tag é sobre um conjunto de caracteres-->
-    <title>Melissa Paola</title> <!--Título da página-->
+<head>
+    <meta charset="UTF-8">
+
+    <title>Melissa Paola</title>
+
     <link rel="icon" href="assets/b8229faa11fd5c0b6150d2b8c8b90e80-removebg-preview.png">
-    <!--Essa tag relaciona meus estilos-->
-    <link rel="stylesheet" href="style.css"> <!--Essa tag relaciona meus estilos-->
-    <script src="App.js"></script> <!--Essa tag ativa o java script-->
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="App.js"></script>
+
+    <!-- Fonte Dancing Script -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body> <!--corpo-->
+<body>
+
+    <!-- MENU -->
     <header>
-        <a href="#apres">Início</a>
-        <a href="#sobre">Sobre mim</a>
-        <a href="#habil">habilidades</a>
-
-
+        <nav>
+            <a href="#apres">Início</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#habil">Habilidades</a>
+        </nav>
     </header>
+
+
     <main>
+
+        <!-- APRESENTAÇÃO -->
         <section id="apres">
-            <div>
-                <h1>Melissa Paola Santos de Souza.</h1>
-                <h2>Estudante e Técnica em <br> informática para internet.</h2>
+
+            <div class="container apresentacao">
+
+                <div class="aprestext">
+                    <h1>Melissa Paola Santos de Souza.</h1>
+
+                    <h2>
+                        Estudante e Técnica em
+                        <br>
+                        informática para internet.
+                    </h2>
+                </div>
+
+                <div class="apresimg">
+                    <img
+                        src="assets/b8229faa11fd5c0b6150d2b8c8b90e80-removebg-preview.png"
+                        alt="Ilustração decorativa">
+                </div>
+
             </div>
-            <div>
-                <img src="assets/b8229faa11fd5c0b6150d2b8c8b90e80-removebg-preview.png" alt="Foto minha">
+
+        </section>
+
+
+        <!-- CONTATO -->
+        <section id="info">
+
+            <div class="container">
+
+                <h2>Contato</h2>
+
+                <div class="contato">
+
+                    <div class="linksicon">
+
+                        <a href="mailto:Melissa.paola.s.souza@gmail.com">
+                            <svg class="iconsobre">
+                                <use href="assets/envelope-solid-full.svg"></use>
+                            </svg>
+                        </a>
+
+                        <a
+                            href="https://github.com/MelissaPaola"
+                            target="_blank">
+                            <svg class="iconsobre">
+                                <use href="assets/GithubIco.svg"></use>
+                            </svg>
+                        </a>
+
+                        <a
+                            href="https://wa.me/5511913088915"
+                            target="_blank">
+                            <svg class="iconsobre">
+                                <use href="assets/whatsapp-svgrepo-com.svg"></use>
+                            </svg>
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/melissa-paola-161333433/"
+                            target="_blank">
+                            <svg class="iconsobre">
+                                <use href="assets/linkedInIco.svg"></use>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                    <h4>📍 São Paulo, Brasil</h4>
+
+                </div>
+
             </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+        <section id="sobre">
+
+            <div class="container">
+
+                <h2>Sobre mim</h2>
+
+                <p>
+                    Sou estudante do Ensino Médio e estou em busca da minha
+                    primeira oportunidade profissional como Jovem Aprendiz,
+                    com o objetivo de adquirir experiência, ampliar meus
+                    conhecimentos e desenvolver novas habilidades em um
+                    ambiente de trabalho.
+
+                    Sou uma pessoa dedicada, responsável, proativa e estou
+                    sempre disposta a aprender e enfrentar novos desafios.
+
+                    Atualmente, estou cursando Técnico em Informática para
+                    Internet, área pela qual tenho grande interesse e na qual
+                    pretendo desenvolver minha carreira profissional.
+
+                    Busco uma oportunidade que me permita colocar em prática
+                    os conhecimentos adquiridos durante minha formação,
+                    aprender com profissionais experientes e contribuir de
+                    forma positiva, responsável e produtiva para a equipe
+                    e para a empresa.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HABILIDADES -->
+        <section id="habil">
+
+            <div class="container">
+
+                <h2>Habilidades</h2>
+
+                <div class="habilidades">
+
+                    <!-- SOFT SKILLS -->
+                    <div class="cardhabil">
+
+                        <h3>Soft Skills</h3>
+
+                        <ul>
+                            <li>Comunicação assertiva</li>
+                            <li>Trabalho em equipe</li>
+                            <li>Responsabilidade</li>
+                            <li>Proatividade</li>
+                            <li>Adaptabilidade</li>
+                        </ul>
+
+                    </div>
+
+
+                    <!-- HARD SKILLS -->
+                    <div class="cardhabil">
+
+                        <h3>Hard Skills</h3>
+
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
-    <section id="info">
-        <h3>Contato:</h3>
-
-        <div class="linksicon">
-        <div class="blockicon">
-            <a href="mailto:Melissa.paola.s.souza@gmail.com">
-                <svg class="iconsobre">
-                    <use href="assets/envelope-solid-full.svg"></use>
-                </svg>
-            </a>
-            <a href="https://github.com/MelissaPaola" target="_blank">
-                        <svg class="iconsobre">
-                            <use href="assets/GithubIco.svg"></use>
-                        </svg>
-                    </a>
-        </div>
-        <div class="blockicon">
-            <a href="https://wa.me//5511913088915?text=01%C3%A1,Olá,%20Melissa!" target="_blank">
-                <svg class="iconsobre">
-                    <use href="assets/whatsapp-svgrepo-com.svg"></use>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/melissa-paola-161333433/" target="_blank">
-                <svg class="iconsobre">
-                    <use href="assets/linkedInIco.svg"></use>
-                </svg>
-            </a>
-        </div>
-        <h4>São Paulo, Brasil</h4>
-    </section>
 
 
-    <hr>
-
-    <section id="sobre">
-        <h3>Sobre:</h3>
-        <p class="bio"> Sou estudante do Ensino Médio e estou em busca da minha primeira oportunidade profissional como Jovem Aprendiz, com o objetivo de adquirir experiência, ampliar meus conhecimentos e desenvolver novas habilidades em um ambiente de trabalho. Sou uma pessoa dedicada, responsável, proativa e estou sempre disposta a aprender e enfrentar novos desafios. Atualmente, estou cursando Técnico em Informática para Internet, área pela qual tenho grande interesse e na qual pretendo desenvolver minha carreira profissional. Busco uma oportunidade que me permita colocar em prática os conhecimentos adquiridos durante minha formação, aprender com profissionais experientes e contribuir de forma positiva, responsável e produtiva para a equipe e para a empresa.</p>
-    </section>
-
-    <section id="habil">
-        <hr>
-        <h3>Habilidades</h3>
-       
-    <div>
-            <h4>Soft Skills</h4>
-            <ul>
-                <li>Comunicação assertiva;</li>
-                <li>Trabalho em equipe;</li>
-                <li>Responsável;</li>
-                <li>Proatividade;</li>
-                <li>Adaptabilidade;</li>
-            </ul>
-        </div>
-
-        <div>
-            <br>
-            <h4>Hard Skills</h4>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                
-            </ul>
-        </div>
-    </section>
-
-    </main>
-
+    <!-- RODAPÉ -->
     <footer>
-        <div>
-            <h5>Melissa Paola</h5>
-            <p>Meu site :3</p>
-        </div>
 
-        <div>
-            <br>
-            <h5>Seguir</h5>
-            <ul>
-                <li>
-                    <a href="https://github.com/MelissaPaola" target="_blank">
-                        <svg class="icone">
-                            <use href="assets/GithubIco.svg"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/melissa-paola-161333433/" target="_blank">
-                        <svg class="icone">
-                            <use href="assets/linkedInIco.svg"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/_angel.lissa_/" target="_blank"><svg class="icone">
-                            <use href="assets/instagram_logo_icon_186894.svg"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+        <div class="container footer-content">
+
+            <div class="footer-info">
+                <h3>Melissa Paola</h3>
+                <p>Meu site :3</p>
+            </div>
+
+            <div class="footer-social">
+
+                <h3>Seguir</h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://github.com/MelissaPaola"
+                            target="_blank">
+
+                            <svg class="icone">
+                                <use href="assets/GithubIco.svg"></use>
+                            </svg>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/melissa-paola-161333433/"
+                            target="_blank">
+
+                            <svg class="icone">
+                                <use href="assets/linkedInIco.svg"></use>
+                            </svg>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.instagram.com/_angel.lissa_/"
+                            target="_blank">
+
+                            <svg class="icone">
+                                <use href="assets/instagram_logo_icon_186894.svg"></use>
+                            </svg>
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
 
     </footer>
+
 </body>
 
 </html>

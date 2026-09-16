@@ -1,101 +1,295 @@
+/* ===== RESET ===== */
+
 * {
-   margin: 0px;
-   padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/*CSS Vem aqui em baixo*/
-header {
-   background-color: #98ad70;
-   padding: 20px 0px;
-   position: fixed;
-   width: 100%;
+
+/* ===== GERAL ===== */
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-   font-family: 'Arial', sans-serif;
-   background-color: #dee9d5;
-   color: #536F3E;
+    font-family: Arial, sans-serif;
+    background-color: #dee9d5;
+    color: #536f3e;
 }
 
-body a {
-   text-transform: uppercase;
-   text-decoration: none;
-   color: #3D5F23;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-body a:hover {
-   text-decoration: underline;
-   color: rgb(104, 88, 68);
-   font-weight: bold;
-
+a {
+    color: #3d5f23;
+    text-decoration: none;
 }
+
+a:hover {
+    color: #685844;
+}
+
+
+/* ===== MENU ===== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: #98ad70;
+
+    padding: 18px;
+
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* ===== APRESENTAÇÃO ===== */
 
 #apres {
-   font-family: "dancing-script", cursive;
-   margin-bottom: 20px;
-   background-color: rgb(255, 253, 253);
-   padding-top: 60px;
-   gap: 50px;
-   display: flex;
-   gap: 200px;
+    min-height: 600px;
+
+    background-color: #fffdfd;
+
+    padding-top: 100px;
 }
-#info {
+
+.apresentacao {
+    min-height: 600px;
+
     display: flex;
-   gap: 50px;
-   padding-top: 60px;
-   padding-inline: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
 }
 
-#sobre {
-   padding-top: 60px;
-   display: flex;
-   flex-direction: column;
-   padding-inline: 90px;
+.aprestext {
+    flex: 1;
 }
 
-#habil {
-   padding-top: 60px;
-   padding-top: 60px;
-   display: flex;
-   gap: 50px;
+.aprestext h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-footer {
-   background-color: #98ad70;
+.aprestext h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 25px;
+    font-weight: 500;
 }
 
-footer ul {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   list-style-type: none;
+.apresimg {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
 }
 
-.icone {
-   fill: #536F3E;
-   stroke: #536F3E;
-   stroke-width: 5px;
-   width: 50px;
-   height: 50px;
+.apresimg img {
+    width: 300px;
+    max-width: 100%;
+}
 
+
+/* ===== CONTATO ===== */
+
+#info {
+    padding: 60px 0;
+    background-color: #dee9d5;
+}
+
+.contato {
+    margin-top: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.linksicon {
+    display: flex;
+    gap: 15px;
 }
 
 .iconsobre {
-   width: 25px;
-   height: 25px;
-   fill: #536F3E;
+    width: 25px;
+    height: 25px;
+
+    fill: #536f3e;
 }
-.linksicon {
-   display: flex;
-   flex-direction: row;
-   justify-items: center;
-   justify-content: center;
-   width: 120px;
-   gap: 5px;
-   padding: 5px;
+
+
+/* ===== SOBRE ===== */
+
+#sobre {
+    padding: 80px 0;
 }
-.blockicon {
-display: flex;
-flex-direction: column;
-padding: 5px;
+
+#sobre h2 {
+    margin-bottom: 25px;
+}
+
+#sobre p {
+    max-width: 900px;
+
+    line-height: 1.7;
+}
+
+
+/* ===== HABILIDADES ===== */
+
+#habil {
+    padding: 80px 0;
+}
+
+#habil > .container > h2 {
+    margin-bottom: 30px;
+}
+
+.habilidades {
+    display: flex;
+    gap: 30px;
+}
+
+.cardhabil {
+    flex: 1;
+
+    padding: 30px;
+
+    background-color: #f8faf5;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cardhabil h3 {
+    margin-bottom: 20px;
+}
+
+.cardhabil ul {
+    padding-left: 20px;
+}
+
+.cardhabil li {
+    margin-bottom: 10px;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #98ad70;
+
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.icone {
+    width: 50px;
+    height: 50px;
+
+    fill: #536f3e;
+    stroke: #536f3e;
+}
+
+
+/* ===== CELULAR ===== */
+
+@media (max-width: 768px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* Apresentação */
+
+    #apres {
+        padding-top: 100px;
+    }
+
+    .apresentacao {
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 60px 0;
+    }
+
+    .aprestext h1 {
+        font-size: 38px;
+    }
+
+    .aprestext h2 {
+        font-size: 21px;
+    }
+
+    .apresimg img {
+        width: 230px;
+    }
+
+
+    /* Contato */
+
+    .contato {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    /* Habilidades */
+
+    .habilidades {
+        flex-direction: column;
+    }
+
+
+    /* Footer */
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
 }
