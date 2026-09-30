@@ -291,3 +291,378 @@ footer {
    }
 
 }
+
+/* ===== CORES DOS TEMAS ===== */
+
+/* Tema claro (padrão) - sua paleta atual */
+:root {
+   --fundo: #dee9d5;
+   --texto: #536f3e;
+   --link: #3d5f23;
+   --link-hover: #685844;
+   --barra: #98ad70;
+   /* header e footer */
+   --apresentacao: #fffdfd;
+   --card: #f8faf5;
+}
+
+/* Tema escuro - ativado quando o body tem a classe "escuro" */
+body.escuro {
+   --fundo: #1b2415;
+   --texto: #c5d8b0;
+   --link: #a8c888;
+   --link-hover: #d9c3a5;
+   --barra: #2f3d22;
+   --apresentacao: #232f1a;
+   --card: #2a3821;
+}
+
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+/* ===== GERAL ===== */
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: var(--fundo);
+   color: var(--texto);
+
+   transition: background-color 0.3s, color 0.3s;
+}
+
+/* deixa a troca de tema suave nas outras áreas também */
+header,
+footer,
+#apres,
+#info,
+.cardhabil {
+   transition: background-color 0.3s;
+}
+
+.container {
+   width: 90%;
+   max-width: 1100px;
+   margin: 0 auto;
+}
+
+a {
+   color: var(--link);
+   text-decoration: none;
+}
+
+a:hover {
+   color: var(--link-hover);
+}
+
+
+/* ===== MENU ===== */
+
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+
+   width: 100%;
+
+   background-color: var(--barra);
+
+   padding: 18px;
+
+   z-index: 1000;
+}
+
+nav {
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+}
+
+nav a {
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+
+/* ===== APRESENTAÇÃO ===== */
+
+#apres {
+   min-height: 600px;
+
+   background-color: var(--apresentacao);
+
+   padding-top: 100px;
+}
+
+.apresentacao {
+   min-height: 600px;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   gap: 50px;
+}
+
+.aprestext {
+   flex: 1;
+}
+
+.aprestext h1 {
+   font-family: "Dancing Script", cursive;
+   font-size: 48px;
+   margin-bottom: 20px;
+}
+
+.aprestext h2 {
+   font-family: "Dancing Script", cursive;
+   font-size: 25px;
+   font-weight: 500;
+}
+
+.apresimg {
+   flex: 1;
+
+   display: flex;
+   justify-content: center;
+}
+
+.apresimg img {
+   width: 300px;
+   max-width: 100%;
+}
+
+
+/* ===== CONTATO ===== */
+
+#info {
+   padding: 60px 0;
+   background-color: var(--fundo);
+}
+
+.contato {
+   margin-top: 25px;
+
+   display: flex;
+   align-items: center;
+
+   gap: 30px;
+}
+
+.linksicon {
+   display: flex;
+   gap: 15px;
+}
+
+.iconsobre {
+   width: 25px;
+   height: 25px;
+
+   fill: var(--texto);
+}
+
+
+/* ===== SOBRE ===== */
+
+#sobre {
+   padding: 80px 0;
+}
+
+#sobre h2 {
+   margin-bottom: 25px;
+}
+
+#sobre p {
+   max-width: 900px;
+
+   line-height: 1.7;
+}
+
+
+/* ===== HABILIDADES ===== */
+
+#habil {
+   padding: 80px 0;
+}
+
+#habil>.container>h2 {
+   margin-bottom: 30px;
+}
+
+.habilidades {
+   display: flex;
+   gap: 30px;
+}
+
+.cardhabil {
+   flex: 1;
+
+   padding: 30px;
+
+   background-color: var(--card);
+
+   border-radius: 15px;
+
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cardhabil h3 {
+   margin-bottom: 20px;
+}
+
+.cardhabil ul {
+   padding-left: 20px;
+}
+
+.cardhabil li {
+   margin-bottom: 10px;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+   background-color: var(--barra);
+
+   padding: 50px 0;
+}
+
+.footer-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.footer-social ul {
+   display: flex;
+   gap: 30px;
+
+   list-style: none;
+}
+
+.icone {
+   width: 50px;
+   height: 50px;
+
+   fill: var(--texto);
+   stroke: var(--texto);
+}
+
+
+/* ===== BOTÃO DE TEMA ===== */
+
+#simples {
+   position: absolute;
+   right: 20px;
+   top: 50%;
+   transform: translateY(-50%);
+
+   padding: 8px 16px;
+
+   background-color: var(--texto);
+   color: var(--barra);
+
+   border: none;
+   border-radius: 20px;
+
+   font-family: Arial, sans-serif;
+   font-size: 13px;
+   font-weight: bold;
+   text-transform: uppercase;
+
+   cursor: pointer;
+
+   transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+#simples:hover {
+   background-color: var(--link);
+   transform: translateY(-50%) scale(1.05);
+}
+
+
+/* ===== CELULAR ===== */
+
+@media (max-width: 768px) {
+
+   nav {
+      gap: 15px;
+   }
+
+   nav a {
+      font-size: 12px;
+   }
+
+   #simples {
+      position: static;
+      transform: none;
+
+      display: block;
+      margin: 0 auto 12px;
+   }
+
+   #simples:hover {
+      transform: scale(1.05);
+   }
+
+
+   /* Apresentação */
+
+   #apres {
+      padding-top: 100px;
+   }
+
+   .apresentacao {
+      flex-direction: column;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 60px 0;
+   }
+
+   .aprestext h1 {
+      font-size: 38px;
+   }
+
+   .aprestext h2 {
+      font-size: 21px;
+   }
+
+   .apresimg img {
+      width: 230px;
+   }
+
+
+   /* Contato */
+
+   .contato {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+
+   /* Habilidades */
+
+   .habilidades {
+      flex-direction: column;
+   }
+
+
+   /* Footer */
+
+   .footer-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+   }
+
+}
