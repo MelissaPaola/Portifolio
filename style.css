@@ -4,294 +4,6 @@
    box-sizing: border-box;
 }
 
-
-/* ===== GERAL ===== */
-
-html {
-   scroll-behavior: smooth;
-}
-
-body {
-   font-family: Arial, sans-serif;
-   background-color: #dee9d5;
-   color: #536f3e;
-}
-
-.container {
-   width: 90%;
-   max-width: 1100px;
-   margin: 0 auto;
-}
-
-a {
-   color: #3d5f23;
-   text-decoration: none;
-}
-
-a:hover {
-   color: #685844;
-}
-
-
-/* ===== MENU ===== */
-
-header {
-   position: fixed;
-   top: 0;
-   left: 0;
-
-   width: 100%;
-
-   background-color: #98ad70;
-
-   padding: 18px;
-
-   z-index: 1000;
-}
-
-nav {
-   display: flex;
-   justify-content: center;
-   gap: 40px;
-}
-
-nav a {
-   font-weight: bold;
-   text-transform: uppercase;
-}
-
-
-/* ===== APRESENTAÇÃO ===== */
-
-#apres {
-   min-height: 600px;
-
-   background-color: #fffdfd;
-
-   padding-top: 100px;
-}
-
-.apresentacao {
-   min-height: 600px;
-
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-
-   gap: 50px;
-}
-
-.aprestext {
-   flex: 1;
-}
-
-.aprestext h1 {
-   font-family: "Dancing Script", cursive;
-   font-size: 48px;
-   margin-bottom: 20px;
-}
-
-.aprestext h2 {
-   font-family: "Dancing Script", cursive;
-   font-size: 25px;
-   font-weight: 500;
-}
-
-.apresimg {
-   flex: 1;
-
-   display: flex;
-   justify-content: center;
-}
-
-.apresimg img {
-   width: 300px;
-   max-width: 100%;
-}
-
-
-/* ===== CONTATO ===== */
-
-#info {
-   padding: 60px 0;
-   background-color: #dee9d5;
-}
-
-.contato {
-   margin-top: 25px;
-
-   display: flex;
-   align-items: center;
-
-   gap: 30px;
-}
-
-.linksicon {
-   display: flex;
-   gap: 15px;
-}
-
-.iconsobre {
-   width: 25px;
-   height: 25px;
-
-   fill: #536f3e;
-}
-
-
-/* ===== SOBRE ===== */
-
-#sobre {
-   padding: 80px 0;
-}
-
-#sobre h2 {
-   margin-bottom: 25px;
-}
-
-#sobre p {
-   max-width: 900px;
-
-   line-height: 1.7;
-}
-
-
-/* ===== HABILIDADES ===== */
-
-#habil {
-   padding: 80px 0;
-}
-
-#habil>.container>h2 {
-   margin-bottom: 30px;
-}
-
-.habilidades {
-   display: flex;
-   gap: 30px;
-}
-
-.cardhabil {
-   flex: 1;
-
-   padding: 30px;
-
-   background-color: #f8faf5;
-
-   border-radius: 15px;
-
-   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.cardhabil h3 {
-   margin-bottom: 20px;
-}
-
-.cardhabil ul {
-   padding-left: 20px;
-}
-
-.cardhabil li {
-   margin-bottom: 10px;
-}
-
-
-/* ===== FOOTER ===== */
-
-footer {
-   background-color: #98ad70;
-
-   padding: 50px 0;
-}
-
-.footer-content {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-}
-
-.footer-social ul {
-   display: flex;
-   gap: 30px;
-
-   list-style: none;
-}
-
-.icone {
-   width: 50px;
-   height: 50px;
-
-   fill: #536f3e;
-   stroke: #536f3e;
-}
-
-
-/* ===== CELULAR ===== */
-
-@media (max-width: 768px) {
-
-   nav {
-      gap: 15px;
-   }
-
-   nav a {
-      font-size: 12px;
-   }
-
-
-   /* Apresentação */
-
-   #apres {
-      padding-top: 100px;
-   }
-
-   .apresentacao {
-      flex-direction: column;
-      justify-content: center;
-
-      text-align: center;
-
-      padding: 60px 0;
-   }
-
-   .aprestext h1 {
-      font-size: 38px;
-   }
-
-   .aprestext h2 {
-      font-size: 21px;
-   }
-
-   .apresimg img {
-      width: 230px;
-   }
-
-
-   /* Contato */
-
-   .contato {
-      flex-direction: column;
-      align-items: flex-start;
-   }
-
-
-   /* Habilidades */
-
-   .habilidades {
-      flex-direction: column;
-   }
-
-
-   /* Footer */
-
-   .footer-content {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 30px;
-   }
-
-}
-
 /* ===== CORES DOS TEMAS ===== */
 
 /* Tema claro (padrão) - sua paleta atual */
@@ -315,13 +27,6 @@ body.escuro {
    --barra: #2f3d22;
    --apresentacao: #232f1a;
    --card: #2a3821;
-}
-
-
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
 }
 
 
@@ -389,6 +94,60 @@ nav {
 nav a {
    font-weight: bold;
    text-transform: uppercase;
+
+   position: relative;
+   padding-bottom: 4px;
+}
+
+/* sublinhado animado no hover dos links do menu */
+nav a::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+
+   width: 0%;
+   height: 2px;
+
+   background-color: var(--link);
+
+   transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+   width: 100%;
+}
+
+
+/* ===== BOTÃO DE TEMA ===== */
+
+#simples {
+   position: absolute;
+   right: 20px;
+   top: 50%;
+   transform: translateY(-50%);
+
+   padding: 8px 16px;
+
+   background-color: var(--texto);
+   color: var(--barra);
+
+   border: none;
+   border-radius: 20px;
+
+   font-family: Arial, sans-serif;
+   font-size: 13px;
+   font-weight: bold;
+   text-transform: uppercase;
+
+   cursor: pointer;
+
+   transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+#simples:hover {
+   background-color: var(--link);
+   transform: translateY(-50%) scale(1.05);
 }
 
 
@@ -438,6 +197,14 @@ nav a {
 .apresimg img {
    width: 300px;
    max-width: 100%;
+
+   /* flutuação suave */
+   animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+   0%, 100% { transform: translateY(0); }
+   50% { transform: translateY(-12px); }
 }
 
 
@@ -467,6 +234,13 @@ nav a {
    height: 25px;
 
    fill: var(--texto);
+
+   transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+a:hover .iconsobre {
+   transform: scale(1.15);
+   fill: var(--link-hover);
 }
 
 
@@ -512,6 +286,13 @@ nav a {
    border-radius: 15px;
 
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+.cardhabil:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .cardhabil h3 {
@@ -524,6 +305,74 @@ nav a {
 
 .cardhabil li {
    margin-bottom: 10px;
+}
+
+
+/* ===== PROJETOS ===== */
+
+#projetos {
+   padding: 80px 0;
+}
+
+#projetos>.container>h2 {
+   margin-bottom: 30px;
+}
+
+.projetos {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+}
+
+.cardprojeto {
+   flex: 1 1 280px;
+
+   padding: 30px;
+
+   background-color: var(--card);
+
+   border-radius: 15px;
+
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+.cardprojeto:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cardprojeto h3 {
+   margin-bottom: 10px;
+}
+
+.cardprojeto p {
+   margin-bottom: 20px;
+   line-height: 1.6;
+}
+
+.btn-projeto {
+   display: inline-block;
+
+   padding: 8px 18px;
+
+   background-color: var(--texto);
+   color: var(--card);
+
+   border-radius: 20px;
+
+   font-weight: bold;
+   font-size: 13px;
+   text-transform: uppercase;
+
+   transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-projeto:hover {
+   background-color: var(--link-hover);
+   color: var(--card);
+   transform: scale(1.05);
 }
 
 
@@ -554,38 +403,42 @@ footer {
 
    fill: var(--texto);
    stroke: var(--texto);
+
+   transition: transform 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+}
+
+a:hover .icone {
+   transform: scale(1.15);
+   fill: var(--link-hover);
+   stroke: var(--link-hover);
 }
 
 
-/* ===== BOTÃO DE TEMA ===== */
+/* ===== FADE-IN AO ROLAR ===== */
 
-#simples {
-   position: absolute;
-   right: 20px;
-   top: 50%;
-   transform: translateY(-50%);
+.fade-in {
+   opacity: 0;
+   transform: translateY(30px);
 
-   padding: 8px 16px;
-
-   background-color: var(--texto);
-   color: var(--barra);
-
-   border: none;
-   border-radius: 20px;
-
-   font-family: Arial, sans-serif;
-   font-size: 13px;
-   font-weight: bold;
-   text-transform: uppercase;
-
-   cursor: pointer;
-
-   transition: background-color 0.3s, color 0.3s, transform 0.2s;
+   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-#simples:hover {
-   background-color: var(--link);
-   transform: translateY(-50%) scale(1.05);
+.fade-in.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+/* respeita quem prefere menos movimento no sistema */
+@media (prefers-reduced-motion: reduce) {
+   .fade-in,
+   .apresimg img,
+   .cardhabil,
+   .icone,
+   .iconsobre,
+   nav a::after {
+      animation: none !important;
+      transition: none !important;
+   }
 }
 
 
@@ -639,6 +492,9 @@ footer {
 
    .apresimg img {
       width: 230px;
+
+      /* desativa a flutuação no celular: evita distração e economiza performance */
+      animation: none;
    }
 
 
