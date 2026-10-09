@@ -1,24 +1,26 @@
+/* ===== RESET ===== */
+
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
 
+
 /* ===== CORES DOS TEMAS ===== */
 
-/* Tema claro (padrão) - sua paleta atual */
+/* Tema claro (padrão) */
 :root {
    --fundo: #dee9d5;
    --texto: #536f3e;
    --link: #3d5f23;
    --link-hover: #685844;
    --barra: #98ad70;
-   /* header e footer */
    --apresentacao: #fffdfd;
    --card: #f8faf5;
 }
 
-/* Tema escuro - ativado quando o body tem a classe "escuro" */
+/* Tema escuro */
 body.escuro {
    --fundo: #1b2415;
    --texto: #c5d8b0;
@@ -40,16 +42,15 @@ body {
    font-family: Arial, sans-serif;
    background-color: var(--fundo);
    color: var(--texto);
-
    transition: background-color 0.3s, color 0.3s;
 }
 
-/* deixa a troca de tema suave nas outras áreas também */
 header,
 footer,
 #apres,
 #info,
-.cardhabil {
+.cardhabil,
+.cardprojeto {
    transition: background-color 0.3s;
 }
 
@@ -75,42 +76,34 @@ header {
    position: fixed;
    top: 0;
    left: 0;
-
    width: 100%;
-
    background-color: var(--barra);
-
    padding: 18px;
-
    z-index: 1000;
 }
 
 nav {
    display: flex;
    justify-content: center;
+   align-items: center;
    gap: 40px;
 }
 
 nav a {
    font-weight: bold;
    text-transform: uppercase;
-
    position: relative;
    padding-bottom: 4px;
 }
 
-/* sublinhado animado no hover dos links do menu */
 nav a::after {
    content: "";
    position: absolute;
    left: 0;
    bottom: 0;
-
-   width: 0%;
+   width: 0;
    height: 2px;
-
    background-color: var(--link);
-
    transition: width 0.3s ease;
 }
 
@@ -126,23 +119,20 @@ nav a:hover::after {
    right: 20px;
    top: 50%;
    transform: translateY(-50%);
-
    padding: 8px 16px;
-
    background-color: var(--texto);
    color: var(--barra);
-
    border: none;
    border-radius: 20px;
-
    font-family: Arial, sans-serif;
    font-size: 13px;
    font-weight: bold;
    text-transform: uppercase;
-
    cursor: pointer;
-
-   transition: background-color 0.3s, color 0.3s, transform 0.2s;
+   transition:
+      background-color 0.3s,
+      color 0.3s,
+      transform 0.2s;
 }
 
 #simples:hover {
@@ -155,19 +145,15 @@ nav a:hover::after {
 
 #apres {
    min-height: 600px;
-
    background-color: var(--apresentacao);
-
    padding-top: 100px;
 }
 
 .apresentacao {
    min-height: 600px;
-
    display: flex;
    align-items: center;
    justify-content: space-between;
-
    gap: 50px;
 }
 
@@ -189,22 +175,120 @@ nav a:hover::after {
 
 .apresimg {
    flex: 1;
-
    display: flex;
    justify-content: center;
+   align-items: center;
+   position: relative;
 }
 
 .apresimg img {
    width: 300px;
    max-width: 100%;
-
-   /* flutuação suave */
+   height: auto;
+   position: relative;
+   z-index: 1;
    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
-   0%, 100% { transform: translateY(0); }
-   50% { transform: translateY(-12px); }
+   0%,
+   100% {
+      transform: translateY(0);
+   }
+
+   50% {
+      transform: translateY(-12px);
+   }
+}
+
+
+/* ===== DECORAÇÃO DO HERO ===== */
+
+.blob-decorativo {
+   position: absolute;
+   width: 260px;
+   height: 260px;
+   max-width: 70%;
+   aspect-ratio: 1 / 1;
+   background-color: var(--fundo);
+   border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+   animation: morph 8s ease-in-out infinite;
+   z-index: 0;
+}
+
+@keyframes morph {
+   0%,
+   100% {
+      border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+   }
+
+   50% {
+      border-radius: 58% 42% 35% 65% / 55% 60% 40% 45%;
+   }
+}
+
+.estrela {
+   position: absolute;
+   color: var(--barra);
+   z-index: 2;
+   pointer-events: none;
+   animation: twinkle 2.4s ease-in-out infinite;
+}
+
+.e1 {
+   top: 8%;
+   left: 10%;
+   font-size: 20px;
+}
+
+.e2 {
+   top: 65%;
+   left: 5%;
+   font-size: 13px;
+   animation-delay: 0.6s;
+}
+
+.e3 {
+   top: 12%;
+   right: 8%;
+   font-size: 15px;
+   animation-delay: 1.1s;
+}
+
+.e4 {
+   bottom: 10%;
+   right: 12%;
+   font-size: 18px;
+   animation-delay: 1.7s;
+}
+
+@keyframes twinkle {
+   0%,
+   100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+   }
+
+   50% {
+      opacity: 1;
+      transform: scale(1.15);
+   }
+}
+
+
+/* ===== SUBTÍTULO COM EFEITO DE DIGITAÇÃO ===== */
+
+.aprestext h2.typing {
+   min-height: 2.6em;
+   border-right: 2px solid var(--texto);
+   padding-right: 4px;
+   animation: blink-cursor 0.8s step-end infinite;
+}
+
+@keyframes blink-cursor {
+   50% {
+      border-color: transparent;
+   }
 }
 
 
@@ -217,24 +301,21 @@ nav a:hover::after {
 
 .contato {
    margin-top: 25px;
-
    display: flex;
    align-items: center;
-
    gap: 30px;
 }
 
 .linksicon {
    display: flex;
+   align-items: center;
    gap: 15px;
 }
 
 .iconsobre {
    width: 25px;
    height: 25px;
-
    fill: var(--texto);
-
    transition: transform 0.3s ease, fill 0.3s ease;
 }
 
@@ -256,7 +337,6 @@ a:hover .iconsobre {
 
 #sobre p {
    max-width: 900px;
-
    line-height: 1.7;
 }
 
@@ -267,7 +347,7 @@ a:hover .iconsobre {
    padding: 80px 0;
 }
 
-#habil>.container>h2 {
+#habil > .container > h2 {
    margin-bottom: 30px;
 }
 
@@ -278,16 +358,15 @@ a:hover .iconsobre {
 
 .cardhabil {
    flex: 1;
-
+   min-width: 0;
    padding: 30px;
-
    background-color: var(--card);
-
    border-radius: 15px;
-
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-
-   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+   transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s;
 }
 
 .cardhabil:hover {
@@ -314,7 +393,7 @@ a:hover .iconsobre {
    padding: 80px 0;
 }
 
-#projetos>.container>h2 {
+#projetos > .container > h2 {
    margin-bottom: 30px;
 }
 
@@ -326,16 +405,15 @@ a:hover .iconsobre {
 
 .cardprojeto {
    flex: 1 1 280px;
-
+   min-width: 0;
    padding: 30px;
-
    background-color: var(--card);
-
    border-radius: 15px;
-
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-
-   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+   transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s;
 }
 
 .cardprojeto:hover {
@@ -354,18 +432,13 @@ a:hover .iconsobre {
 
 .btn-projeto {
    display: inline-block;
-
    padding: 8px 18px;
-
    background-color: var(--texto);
    color: var(--card);
-
    border-radius: 20px;
-
    font-weight: bold;
    font-size: 13px;
    text-transform: uppercase;
-
    transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -380,7 +453,6 @@ a:hover .iconsobre {
 
 footer {
    background-color: var(--barra);
-
    padding: 50px 0;
 }
 
@@ -388,23 +460,25 @@ footer {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   gap: 30px;
 }
 
 .footer-social ul {
    display: flex;
+   flex-wrap: wrap;
    gap: 30px;
-
    list-style: none;
 }
 
 .icone {
    width: 50px;
    height: 50px;
-
    fill: var(--texto);
    stroke: var(--texto);
-
-   transition: transform 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+   transition:
+      transform 0.3s ease,
+      fill 0.3s ease,
+      stroke 0.3s ease;
 }
 
 a:hover .icone {
@@ -419,7 +493,6 @@ a:hover .icone {
 .fade-in {
    opacity: 0;
    transform: translateY(30px);
-
    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -428,26 +501,42 @@ a:hover .icone {
    transform: translateY(0);
 }
 
-/* respeita quem prefere menos movimento no sistema */
+
+/* ===== ACESSIBILIDADE: MENOS MOVIMENTO ===== */
+
 @media (prefers-reduced-motion: reduce) {
-   .fade-in,
-   .apresimg img,
-   .cardhabil,
-   .icone,
-   .iconsobre,
-   nav a::after {
+   html {
+      scroll-behavior: auto;
+   }
+
+   *,
+   *::before,
+   *::after {
       animation: none !important;
       transition: none !important;
+   }
+
+   .fade-in {
+      opacity: 1;
+      transform: none;
    }
 }
 
 
-/* ===== CELULAR ===== */
+/* ===== TABLETS E CELULARES ===== */
 
 @media (max-width: 768px) {
 
+   /* Menu */
+
+   header {
+      padding: 12px;
+   }
+
    nav {
-      gap: 15px;
+      flex-wrap: wrap;
+      gap: 12px 15px;
+      padding: 4px 0;
    }
 
    nav a {
@@ -456,10 +545,9 @@ a:hover .icone {
 
    #simples {
       position: static;
-      transform: none;
-
       display: block;
       margin: 0 auto 12px;
+      transform: none;
    }
 
    #simples:hover {
@@ -476,10 +564,13 @@ a:hover .icone {
    .apresentacao {
       flex-direction: column;
       justify-content: center;
-
       text-align: center;
-
+      gap: 35px;
       padding: 60px 0;
+   }
+
+   .aprestext {
+      width: 100%;
    }
 
    .aprestext h1 {
@@ -490,11 +581,19 @@ a:hover .icone {
       font-size: 21px;
    }
 
+   .apresimg {
+      width: 100%;
+      min-height: 230px;
+   }
+
    .apresimg img {
       width: 230px;
-
-      /* desativa a flutuação no celular: evita distração e economiza performance */
       animation: none;
+   }
+
+   .blob-decorativo {
+      width: 180px;
+      height: 180px;
    }
 
 
@@ -503,6 +602,7 @@ a:hover .icone {
    .contato {
       flex-direction: column;
       align-items: flex-start;
+      gap: 20px;
    }
 
 
@@ -510,10 +610,26 @@ a:hover .icone {
 
    .habilidades {
       flex-direction: column;
+      gap: 20px;
+   }
+
+   .cardhabil {
+      width: 100%;
    }
 
 
-   /* Footer */
+   /* Projetos */
+
+   .projetos {
+      gap: 20px;
+   }
+
+   .cardprojeto {
+      flex: 1 1 100%;
+   }
+
+
+   /* Rodapé */
 
    .footer-content {
       flex-direction: column;
@@ -521,4 +637,76 @@ a:hover .icone {
       gap: 30px;
    }
 
+   .footer-social ul {
+      gap: 20px;
+   }
+}
+
+
+/* ===== CELULARES PEQUENOS ===== */
+
+@media (max-width: 480px) {
+
+   .container {
+      width: 92%;
+   }
+
+   header {
+      padding: 10px;
+   }
+
+   nav {
+      gap: 10px 12px;
+   }
+
+   nav a {
+      font-size: 10px;
+   }
+
+   #apres {
+      padding-top: 90px;
+   }
+
+   .apresentacao {
+      min-height: auto;
+      padding: 45px 0;
+   }
+
+   .aprestext h1 {
+      font-size: 32px;
+   }
+
+   .aprestext h2 {
+      font-size: 19px;
+   }
+
+   .apresimg img {
+      width: 200px;
+   }
+
+   .blob-decorativo {
+      width: 160px;
+      height: 160px;
+   }
+
+   #info,
+   #sobre,
+   #habil,
+   #projetos {
+      padding: 55px 0;
+   }
+
+   .cardhabil,
+   .cardprojeto {
+      padding: 22px;
+   }
+
+   .icone {
+      width: 40px;
+      height: 40px;
+   }
+
+   .footer-social ul {
+      gap: 15px;
+   }
 }
