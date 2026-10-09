@@ -710,3 +710,619 @@ a:hover .icone {
       gap: 15px;
    }
 }
+
+/* ===== NOVA APRESENTAÇÃO ===== */
+
+#apres {
+    min-height: auto;
+    padding: 100px 0 38px;
+    background-color: var(--apresentacao);
+}
+
+.apres-container {
+    max-width: 1200px;
+}
+
+.apresentacao {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+}
+
+.aprestext {
+    flex: 1.1;
+    min-width: 0;
+}
+
+.saudacao {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--barra);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.aprestext h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(36px, 3.2vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.aprestext h2.typing {
+    font-family: "Dancing Script", cursive;
+    font-size: 24px;
+    line-height: 1.5;
+    min-height: 0;
+    margin-bottom: 18px;
+    overflow-wrap: anywhere;
+}
+
+.intro-descricao {
+    max-width: 540px;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    border: 1px solid var(--texto);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.25s ease,
+                background-color 0.25s ease,
+                color 0.25s ease;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+}
+
+.btn-principal {
+    background-color: var(--texto);
+    color: var(--apresentacao);
+}
+
+.btn-principal:hover {
+    background-color: var(--link);
+    color: var(--apresentacao);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--texto);
+}
+
+.btn-secundario:hover {
+    background-color: var(--card);
+    color: var(--link-hover);
+}
+
+/* ===== CARDS INFERIORES ===== */
+
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.card-destaque {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    min-width: 0;
+    padding: 25px 22px;
+    border-radius: 24px;
+    background-color: var(--card);
+    border: 1px solid var(--fundo);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.card-destaque:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(50, 70, 35, 0.10);
+}
+
+.tecnologia {
+    background-color: var(--card);
+}
+
+.aprendizado {
+    background-color: var(--apresentacao);
+}
+
+.criatividade {
+    background-color: var(--card);
+}
+
+.destaque-icone {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: var(--fundo);
+    font-size: 23px;
+}
+
+.card-destaque h3 {
+    font-family: "Dancing Script", cursive;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-destaque p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.destaque-decoracao {
+    align-self: flex-end;
+    margin-left: auto;
+    color: var(--barra);
+    font-size: 28px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 900px) {
+    .apresentacao {
+        gap: 25px;
+    }
+
+    .aprestext h1 {
+        font-size: 39px;
+    }
+
+    .destaques {
+        grid-template-columns: 1fr;
+    }
+
+    .card-destaque {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    #apres {
+        padding-top: 120px;
+    }
+
+    .apresentacao {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+        padding: 35px 0 10px;
+    }
+
+    .aprestext {
+        width: 100%;
+        text-align: center;
+    }
+
+    .aprestext h1 {
+        font-size: 38px;
+    }
+
+    .aprestext h2.typing {
+        font-size: 22px;
+    }
+
+    .intro-descricao {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .apresimg {
+        width: 100%;
+        min-height: 230px;
+    }
+
+    .destaques {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aprestext h1 {
+        font-size: 33px;
+    }
+
+    .aprestext h2.typing {
+        font-size: 20px;
+    }
+
+    .intro-descricao {
+        font-size: 14px;
+    }
+
+    .btn-hero {
+        padding: 12px 17px;
+        font-size: 12px;
+    }
+
+    .card-destaque {
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .card-destaque h3 {
+        font-size: 23px;
+    }
+
+    .destaque-decoracao {
+        font-size: 22px;
+    }
+}
+
+/* ========================================
+   DECORAÇÃO GERAL DAS SEÇÕES
+======================================== */
+
+#sobre,
+#habil,
+#projetos,
+#info {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Títulos com detalhe delicado */
+#sobre h2,
+#habil > .container > h2,
+#projetos > .container > h2,
+#info h2 {
+    position: relative;
+    display: table;
+    margin-bottom: 32px;
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(30px, 3vw, 38px);
+    font-weight: 600;
+}
+
+#sobre h2::after,
+#habil > .container > h2::after,
+#projetos > .container > h2::after,
+#info h2::after {
+    content: " ✿";
+    color: var(--barra);
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    vertical-align: middle;
+}
+
+/* Alternância suave entre as seções */
+#sobre,
+#projetos {
+    background-color: var(--apresentacao);
+}
+
+#habil,
+#info {
+    background-color: var(--fundo);
+}
+
+
+/* ========================================
+   SOBRE MIM
+======================================== */
+
+#sobre .container {
+    position: relative;
+    padding: 36px;
+    overflow: hidden;
+    background-color: var(--card);
+    border: 1px solid var(--fundo);
+    border-left: 4px solid var(--barra);
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(50, 70, 35, 0.06);
+}
+
+#sobre .container::after {
+    content: "✧  ⋆  ♧";
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    color: var(--barra);
+    font-size: 23px;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+#sobre h2 {
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    position: relative;
+    z-index: 1;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   HABILIDADES
+======================================== */
+
+.cardhabil {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--fundo);
+    border-radius: 22px;
+    box-shadow: 0 7px 22px rgba(50, 70, 35, 0.07);
+}
+
+.cardhabil::before {
+    content: "✦";
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    color: var(--barra);
+    font-size: 23px;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.cardhabil h3 {
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--fundo);
+    font-family: "Dancing Script", cursive;
+    font-size: 27px;
+}
+
+.cardhabil ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cardhabil li {
+    position: relative;
+    padding-left: 23px;
+    line-height: 1.7;
+}
+
+.cardhabil li::before {
+    content: "✿";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--barra);
+    font-size: 13px;
+}
+
+.cardhabil:hover {
+    border-color: var(--barra);
+}
+
+
+/* ========================================
+   PROJETOS
+======================================== */
+
+.cardprojeto {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--fundo);
+    border-radius: 23px;
+    box-shadow: 0 8px 24px rgba(50, 70, 35, 0.07);
+}
+
+.cardprojeto::before {
+    content: "✧";
+    position: absolute;
+    top: 13px;
+    right: 18px;
+    color: var(--barra);
+    font-size: 25px;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.cardprojeto h3 {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 7px 15px;
+    border-radius: 18px;
+    background-color: var(--fundo);
+    font-family: "Dancing Script", cursive;
+    font-size: 27px;
+}
+
+.cardprojeto p {
+    line-height: 1.8;
+}
+
+.btn-projeto {
+    border: 1px solid transparent;
+}
+
+.btn-projeto:hover {
+    transform: translateY(-2px);
+}
+
+.cardprojeto:hover {
+    border-color: var(--barra);
+}
+
+
+/* ========================================
+   CONTATO
+======================================== */
+
+#info .container {
+    position: relative;
+    padding: 32px;
+    background-color: var(--card);
+    border: 1px solid var(--apresentacao);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(50, 70, 35, 0.06);
+}
+
+#info .container::after {
+    content: "♡  ✧";
+    position: absolute;
+    right: 24px;
+    bottom: 18px;
+    color: var(--barra);
+    font-size: 24px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.contato {
+    flex-wrap: wrap;
+}
+
+.linksicon {
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.linksicon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--fundo);
+    border-radius: 50%;
+    background-color: var(--apresentacao);
+    transition: transform 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.linksicon a:hover {
+    transform: translateY(-4px);
+    background-color: var(--fundo);
+    border-color: var(--barra);
+}
+
+.linksicon a:hover .iconsobre {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--fundo);
+}
+
+footer::before {
+    content: "⋆｡°✩";
+    position: absolute;
+    top: 15px;
+    right: 7%;
+    color: var(--apresentacao);
+    font-size: 25px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+footer::after {
+    content: "🐾";
+    position: absolute;
+    bottom: 12px;
+    left: 5%;
+    font-size: 22px;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.footer-info h3,
+.footer-social h3 {
+    font-family: "Dancing Script", cursive;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.footer-social ul {
+    align-items: center;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-4px) rotate(-3deg);
+}
+
+
+/* ========================================
+   AJUSTES PARA CELULARES
+======================================== */
+
+@media (max-width: 768px) {
+    #sobre .container,
+    #info .container {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    #sobre .container::after,
+    #info .container::after {
+        font-size: 18px;
+    }
+
+    .cardhabil,
+    .cardprojeto {
+        border-radius: 20px;
+    }
+
+    #sobre h2,
+    #habil > .container > h2,
+    #projetos > .container > h2,
+    #info h2 {
+        font-size: 31px;
+    }
+
+    footer::before {
+        right: 5%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cardhabil,
+    .cardprojeto,
+    .linksicon a,
+    .footer-social a {
+        transition: none;
+    }
+}
